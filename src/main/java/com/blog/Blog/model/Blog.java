@@ -1,6 +1,5 @@
 package com.blog.Blog.model;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,14 +25,9 @@ public class Blog {
     @Column(name = "username")
     private String userName;
 
-
     @Column(name = "createdat")
-//    @GeneratedValue(strategy = GenerationType.AUTO)
     private ZonedDateTime createdAt;
 
     @Column(name = "modifiedat")
-//    @GeneratedValue(strategy = GenerationType.AUTO)
     private ZonedDateTime modifiedAt;
-
-
 }

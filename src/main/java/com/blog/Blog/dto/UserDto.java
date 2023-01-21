@@ -1,6 +1,5 @@
 package com.blog.Blog.dto;
 
-import jakarta.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,13 +7,13 @@ import lombok.Setter;
 @Setter
 public class UserDto {
 
-    private String userName;
+     public String userName;
 
-    private String password;
+     public String password;
 
-    private String email;
+     public String email;
 
-    private int phoneNumber;
+     public Long phoneNumber;
 
-    private boolean isActive;
+     public boolean isActive;
 }
