@@ -26,8 +26,8 @@ public class Blog {
     private String userName;
 
     @Column(name = "createdat")
-    private ZonedDateTime createdAt;
+    private ZonedDateTime createdAt = ZonedDateTime.now();
 
     @Column(name = "modifiedat")
-    private ZonedDateTime modifiedAt;
+    private ZonedDateTime modifiedAt = ZonedDateTime.now();
 }

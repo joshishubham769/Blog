@@ -1,10 +1,9 @@
 package com.blog.Blog.service;
+
 import com.blog.Blog.mapper.UserRepository;
 import com.blog.Blog.model.User;
 
-import lombok.Getter;
-import lombok.Setter;
-
+import com.blog.Blog.dto.ResponseObject;
 import com.blog.Blog.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,8 +37,6 @@ public class UserService {
             // user.setPassword(passwordEncoder.encode(userdto.getPassword()));
             User resp = userRepository.save(user);
 
-            // Integer id = resp.getId();
-
             ResponseObject returnResponse = new ResponseObject(
                     true,
                     "User Created successfully!",
@@ -56,22 +53,6 @@ public class UserService {
             );
 
             return returnResponse;
-        }
-    }
-
-    @Getter
-    @Setter
-    public class ResponseObject {
-        private Boolean isSuccess;
-        private String msg;
-        private Integer userid;
-        private String error;
-
-        private ResponseObject(Boolean isSuccess, String msg, Integer userid, String error) {
-            this.isSuccess = isSuccess;
-            this.msg = msg;
-            this.userid = userid;
-            this.error = error;
         }
     }
 
