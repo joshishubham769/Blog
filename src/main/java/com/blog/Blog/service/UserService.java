@@ -16,13 +16,15 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    // private boolean checkForUniqueUserName(String userName) {
-    // // if(userRepository.findBy(User,(uName)->uName==userName))return true;
-    // if (!userRepository.findByUserName(userName).isEmpty())
-    // return true;
-    // else
-    // return false;
-    // }
+    private boolean checkForUniqueUserName(String userName) {
+        // if (userRepository.findBy(User, (uName) -> uName == userName))
+        // return true;
+        // if (!userRepository.findByUserName(userName).isEmpty())
+        // return true;
+        // else
+        // return false;
+
+    }
 
     public ResponseObject registerUser(UserDto userdto) {
         try {

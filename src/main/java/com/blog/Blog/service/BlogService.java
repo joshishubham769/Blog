@@ -13,7 +13,7 @@ public class BlogService {
     @Autowired
     private BlogRepository blogRepository;
 
-    // @Autowired
+    // @Autowired//to avoid creating new object
     // private ResponseObject responseObject;
 
     public ResponseObject createBlog(BlogDto blogDto) {
