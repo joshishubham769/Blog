@@ -1,17 +1,26 @@
 package com.blog.Blog.service;
 
 import com.blog.Blog.dto.BlogDto;
+import com.blog.Blog.dto.UserDto;
 import com.blog.Blog.mapper.BlogRepository;
+import com.blog.Blog.mapper.UserRepository;
 import com.blog.Blog.model.Blog;
 import com.blog.Blog.dto.ResponseObject;
 
+import com.blog.Blog.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class BlogService {
     @Autowired
     private BlogRepository blogRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     // @Autowired//to avoid creating new object
     // private ResponseObject responseObject;
@@ -43,7 +52,6 @@ public class BlogService {
             return returnResponse;
         }
     }
-
     // check if the blog was written by the same person who is trying to edit it if
     // yes edit it
     // public boolean editBlog(User userName, Blog blog, String blogId) throws

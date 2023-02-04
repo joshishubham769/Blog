@@ -1,5 +1,6 @@
 package com.blog.Blog.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

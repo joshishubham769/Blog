@@ -6,8 +6,10 @@ import com.blog.Blog.model.User;
 import com.blog.Blog.dto.ResponseObject;
 import com.blog.Blog.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -42,7 +44,7 @@ public class UserService {
             } else {
                 returnResponse = new ResponseObject(false, "", null, "User Already Exist!");
 
-               // return returnResponse;
+                // return returnResponse;
             }
 
         } catch (Exception e) {
@@ -54,6 +56,14 @@ public class UserService {
         return returnResponse;
     }
 
+    public List<User> getUsers(String userName){
+        List<User> result=new ArrayList<>();
+        if(userName==null){
+            return userRepository.findAll();
+        }
+        else return userRepository.findByUserName(userName);
+    }
+
 
     public boolean loginUser() {// deal with token probabily create and return token
         return false;
@@ -61,5 +71,17 @@ public class UserService {
 
     public boolean logoutUser() {
         return false;
+    }
+
+    public User modifyUser(User modified_user) {
+        userRepository.save(modified_user);
+        return modified_user;
+    }
+
+    public User deleteUser(String userName) {
+        User user= userRepository.findByUserName(userName).get(0);
+        user.setIsActive(false);
+        userRepository.save(user);
+        return user;
     }
 }
