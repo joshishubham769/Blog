@@ -1,18 +1,13 @@
 package com.blog.Blog.service;
 
 import com.blog.Blog.dto.BlogDto;
-import com.blog.Blog.dto.UserDto;
 import com.blog.Blog.mapper.BlogRepository;
 import com.blog.Blog.mapper.UserRepository;
 import com.blog.Blog.model.Blog;
-import com.blog.Blog.dto.ResponseObject;
+import com.blog.Blog.ResponseObject.ResponseObject;
 
-import com.blog.Blog.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class BlogService {
@@ -37,17 +32,14 @@ public class BlogService {
             ResponseObject returnResponse = new ResponseObject(
                     true,
                     "Blog created successfully!",
-                    resp.getBlogId(),
-                    null);
+                    resp.getBlogId());
 
             return returnResponse;
         } catch (Exception e) {
             ResponseObject returnResponse = new ResponseObject(
                     false,
                     "Blog creation failed!",
-                    null,
-                    e.getMessage()// error.message
-            );
+                    null);// error.message;
 
             return returnResponse;
         }

@@ -31,3 +31,27 @@ public class Blog {
     @Column(name = "modifiedat")
     private ZonedDateTime modifiedAt = ZonedDateTime.now();
 }
+/**
+ * try to implement this...
+ *static class Parent{
+ *         int x;
+ *         int y;
+ *     }
+ *     static class Child extends Parent{
+ *         int z;
+ *     }
+ * 	public static void main (String[] args) throws java.lang.Exception
+ *        {
+ * 		Child child=new Child();
+ * 		child.x=1;
+ * 		child.y=2;
+ * 		child.z=3;
+ *
+ * 		Parent parent=(Parent)child;
+ * 		System.out.println(parent.x+" "+parent.y);
+ *
+ * 		Child child2=(Child)parent;
+ * 		child2.z=4;
+ * 		System.out.println(child2.x+" "+child2.y+" "+child2.z);
+ *    }
+ */

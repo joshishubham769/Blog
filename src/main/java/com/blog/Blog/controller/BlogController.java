@@ -1,9 +1,7 @@
 package com.blog.Blog.controller;
 
 import com.blog.Blog.dto.BlogDto;
-import com.blog.Blog.dto.ResponseObject;
-import com.blog.Blog.dto.UserDto;
-import com.blog.Blog.model.User;
+import com.blog.Blog.ResponseObject.ResponseObject;
 import com.blog.Blog.service.BlogService;
 import com.blog.Blog.service.UserService;
 
@@ -12,8 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 public class BlogController {

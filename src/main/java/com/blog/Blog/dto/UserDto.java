@@ -11,5 +11,6 @@ public class UserDto {
      public String password;
      public String email;
      public Long phoneNumber;
+
      public boolean isActive;
 }
