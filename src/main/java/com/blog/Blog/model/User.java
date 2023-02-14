@@ -1,5 +1,6 @@
 package com.blog.Blog.model;
 
+import com.blog.Blog.dto.UserDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,16 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Table(name = "users")
 @NoArgsConstructor
 public class User {
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", isActive=" + isActive +
+                '}';
+    }
 
     @Id
     @Column(name = "id")
@@ -43,4 +54,12 @@ public class User {
 
     @Column(name = "isactive")
     private Boolean isActive = true;
+
+    public User(UserDto userDto){
+        this.userName=userDto.getUserName();
+        this.password=userDto.getPassword();
+        this.email=userDto.getEmail();
+        this.isActive=userDto.isActive();
+        this.phoneNumber=userDto.getPhoneNumber();
+    }
 }
